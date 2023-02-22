@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+author: "Weixiao Li"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+s_10193 <- read.csv("C:/Users/16932/Desktop/BPS/s_10193.csv")
+```
+
+```{r}
+plot.ts(s_10193[,5], ylab="CO2",xlab="Hour")
+```
+
+## 07/18
+```{r}
+new_data_7_18 <- s_10193[c(1:1440),]
+plot.ts(new_data_7_18[,5], ylab="CO2",xlab="07/18")
+```
+
+
+##07/19
+```{r}
+new_data_7_19 <- s_10193[c(1441:2880),]
+plot.ts(new_data_7_19[,5], ylab="CO2",xlab="07/19")
+```
+
+
+##07/20
+```{r}
+new_data_7_20 <- s_10193[c(2881:4320),]
+plot.ts(new_data_7_20[,5], ylab="CO2",xlab="07/20")
+```
+
+##three days
+```{r}
+combine7_18_19_20 <- s_10193[c(1:4320),]
+plot.ts(combine7_18_19_20[,5], ylab="CO2",xlab="07/18-07/20")
+```
+
+
